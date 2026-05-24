@@ -50,11 +50,11 @@ export const timeline = [
     highlights: [
       "Built UPMS microservice from scratch — 500+ RPS, 20% transaction growth",
       "Created Axon framework — async messaging abstraction achieving 45% infra cost reduction org-wide",
+      "Drove Active-Active DC migration — DB circular replication, MemQ integration",
       "Overhauled status-check pipeline — 20,000+ pending/day → <100/day",
+      "Built Piped Gas Meter Reading in 1 week (contract to production) — demonstrated at GFF 2025",
       "Migrated Paylink to modern framework — 15% transaction increase",
       "Led Loan API 1.1 — external NPCI communication and spec compliance",
-      "Drove Active-Active DC migration — DB circular replication, MemQ integration",
-      "Built Piped Gas Meter Reading in 1 week (contract to production) — demonstrated at GFF 2025",
       "Launched 6 bill payment categories; created SOP that eliminated engineering dependency",
       "Mentoring 3 engineers, driving design decisions, production triage, and unblocking across the pod",
     ],
@@ -92,6 +92,40 @@ export const projects = [
     techStack: ["Java 17", "DropWizard", "MariaDB (Sharded)", "Aerospike", "RabbitMQ", "Nginx"],
   },
   {
+    title: "Axon — Async Messaging Framework",
+    period: "May 2025 – Sep 2025",
+    tag: "Greenfield Platform Library",
+    problem:
+      "PhonePe's backend services each implemented their own RabbitMQ/MemQ integration — duplicated boilerplate, inconsistent retry/fallback logic, and expensive infra due to over-provisioned queues with no shared resource management.",
+    solution:
+      "Designed and built Axon from scratch — a lightweight async messaging framework abstracting RMQ and MemQ with unified publish API, configurable routing strategies, MemQ→RMQ fallback, dynamic worker buckets, and shared connection pooling. Published as reusable Dropwizard bundle adopted across teams.",
+    impact: [
+      { metric: "Infra Cost", before: "Baseline", after: "45% reduction across PhonePe" },
+      { metric: "Integration Effort", before: "Days (per service)", after: "Minutes (bundle plug-in)" },
+      { metric: "Queue Management", before: "Manual per-service", after: "Config-driven with validation" },
+      { metric: "Fault Tolerance", before: "No fallback", after: "MemQ→RMQ automatic fallback" },
+      { metric: "Adoption", before: "0 services", after: "Multiple teams org-wide" },
+    ],
+    techStack: ["Java 17", "Dropwizard", "RabbitMQ", "MemQ", "Builder Pattern", "Lifecycle Management"],
+  },
+  {
+    title: "BBPS Active-Active Data Center Migration",
+    period: "Sep 2025 – Feb 2026",
+    tag: "Infrastructure Reliability",
+    problem:
+      "BBPS services ran in a single active data center with passive DR — any DC failure meant full downtime for bill payments affecting millions of users. RabbitMQ couldn't work cross-DC, and all async processing was tightly coupled to a single DC.",
+    solution:
+      "Led the Active-Active migration: redesigned DB schema for circular replication compatibility across data centers, resolved replication conflicts, migrated async workers from RabbitMQ to MemQ (DC-aware queue), validated cross-DC routing, wrote architecture docs, and conducted DR drills to certify readiness.",
+    impact: [
+      { metric: "DC Architecture", before: "Active-Passive (single DC)", after: "Active-Active (multi-DC)" },
+      { metric: "Availability", before: "DC failure = full downtime", after: "Zero-downtime DC failover" },
+      { metric: "DB Replication", before: "Single-master writes", after: "Circular replication (multi-master)" },
+      { metric: "Queue System", before: "RabbitMQ (single-DC only)", after: "MemQ (DC-aware, partitioned)" },
+      { metric: "Blast Radius", before: "100% (all users affected)", after: "~50% (single DC scoped)" },
+    ],
+    techStack: ["Java 17", "MariaDB (Circular Replication)", "MemQ", "RabbitMQ", "Active-Active DC", "DR Drills"],
+  },
+  {
     title: "Status Check Pipeline Overhaul",
     period: "Jul 2023 – Jun 2024",
     tag: "System Redesign",
@@ -106,6 +140,37 @@ export const projects = [
       { metric: "Wrong Refund Risk", before: "Present", after: "Eliminated" },
     ],
     techStack: ["Java", "MariaDB", "Grafana", "Event Pipeline"],
+  },
+  {
+    title: "Piped Gas Meter Reading via Camera",
+    period: "2025 (1 week sprint)",
+    tag: "Hackathon-style Delivery",
+    problem:
+      "Piped gas billers relied on manual door-to-door meter reading — sending field agents to every customer's house to note readings before generating bills. Costly, slow, and error-prone.",
+    solution:
+      "Built end-to-end integration in 1 week (contract finalization to production): camera-based meter reading capture in PhonePe app → submit to biller → biller generates bill → user pays instantly. First-of-its-kind integration — only PhonePe supports this flow.",
+    impact: [
+      { metric: "Time to Production", before: "N/A", after: "1 week (contract to live)" },
+      { metric: "Manual Labor", before: "Field agents visit every home", after: "Eliminated (user self-service)" },
+      { metric: "Industry Recognition", before: "N/A", after: "Demonstrated at GFF 2025 (Global Fintech Festival)" },
+      { metric: "Market Position", before: "No app supported this", after: "PhonePe-exclusive integration" },
+    ],
+    techStack: ["Java", "BBPS Protocol", "Camera Integration", "Biller API", "Production Deploy"],
+  },
+  {
+    title: "E2C Refund Status Visibility",
+    period: "Mar 2026 – Present",
+    tag: "In Progress",
+    problem:
+      "2–2.5 lakh daily UPI refunds from external merchant PSPs (GPay→PhonePe) have zero in-app visibility. Users must manually check bank statements to know if a refund succeeded or failed — causing support tickets and poor user experience.",
+    solution:
+      "Building end-to-end refund status tracking: integrating with NPCI refund callbacks, surfacing real-time refund state in PhonePe app, handling edge cases for failed/partial refunds across external PSP flows.",
+    impact: [
+      { metric: "Daily Refunds Affected", before: "2–2.5L (no visibility)", after: "Full in-app status tracking" },
+      { metric: "User Experience", before: "Check bank statement manually", after: "Real-time refund status in app" },
+      { metric: "Support Tickets", before: "High (refund queries)", after: "Expected significant reduction" },
+    ],
+    techStack: ["Java", "UPI Protocol", "NPCI Integration", "Event Pipeline"],
   },
   {
     title: "Paylink & ClickPay — Framework Migration",
@@ -140,40 +205,6 @@ export const projects = [
     techStack: ["Java 17", "BBPS API 1.1", "XSD", "MariaDB"],
   },
   {
-    title: "BBPS Active-Active Data Center Migration",
-    period: "Sep 2025 – Feb 2026",
-    tag: "Infrastructure Reliability",
-    problem:
-      "BBPS services ran in a single active data center with passive DR — any DC failure meant full downtime for bill payments affecting millions of users. RabbitMQ couldn't work cross-DC, and all async processing was tightly coupled to a single DC.",
-    solution:
-      "Led the Active-Active migration: redesigned DB schema for circular replication compatibility across data centers, resolved replication conflicts, migrated async workers from RabbitMQ to MemQ (DC-aware queue), validated cross-DC routing, wrote architecture docs, and conducted DR drills to certify readiness.",
-    impact: [
-      { metric: "DC Architecture", before: "Active-Passive (single DC)", after: "Active-Active (multi-DC)" },
-      { metric: "Availability", before: "DC failure = full downtime", after: "Zero-downtime DC failover" },
-      { metric: "DB Replication", before: "Single-master writes", after: "Circular replication (multi-master)" },
-      { metric: "Queue System", before: "RabbitMQ (single-DC only)", after: "MemQ (DC-aware, partitioned)" },
-      { metric: "Blast Radius", before: "100% (all users affected)", after: "~50% (single DC scoped)" },
-    ],
-    techStack: ["Java 17", "MariaDB (Circular Replication)", "MemQ", "RabbitMQ", "Active-Active DC", "DR Drills"],
-  },
-  {
-    title: "Axon — Async Messaging Framework",
-    period: "May 2025 – Sep 2025",
-    tag: "Greenfield Platform Library",
-    problem:
-      "PhonePe's backend services each implemented their own RabbitMQ/MemQ integration — duplicated boilerplate, inconsistent retry/fallback logic, and expensive infra due to over-provisioned queues with no shared resource management.",
-    solution:
-      "Designed and built Axon from scratch — a lightweight async messaging framework abstracting RMQ and MemQ with unified publish API, configurable routing strategies, MemQ→RMQ fallback, dynamic worker buckets, and shared connection pooling. Published as reusable Dropwizard bundle adopted across teams.",
-    impact: [
-      { metric: "Infra Cost", before: "Baseline", after: "45% reduction across PhonePe" },
-      { metric: "Integration Effort", before: "Days (per service)", after: "Minutes (bundle plug-in)" },
-      { metric: "Queue Management", before: "Manual per-service", after: "Config-driven with validation" },
-      { metric: "Fault Tolerance", before: "No fallback", after: "MemQ→RMQ automatic fallback" },
-      { metric: "Adoption", before: "0 services", after: "Multiple teams org-wide" },
-    ],
-    techStack: ["Java 17", "Dropwizard", "RabbitMQ", "MemQ", "Builder Pattern", "Lifecycle Management"],
-  },
-  {
     title: "Category Onboarding (6 Categories)",
     period: "2022 – 2024",
     tag: "Process Innovation",
@@ -187,37 +218,6 @@ export const projects = [
       { metric: "Categories Launched by Ops (no eng)", before: "0", after: "2 (Rentals, NPS)" },
     ],
     techStack: ["Java", "BBPS Protocol", "Catalogue Service", "Process Design"],
-  },
-  {
-    title: "Piped Gas Meter Reading via Camera",
-    period: "2025 (1 week sprint)",
-    tag: "Hackathon-style Delivery",
-    problem:
-      "Piped gas billers relied on manual door-to-door meter reading — sending field agents to every customer's house to note readings before generating bills. Costly, slow, and error-prone.",
-    solution:
-      "Built end-to-end integration in 1 week (contract finalization to production): camera-based meter reading capture in PhonePe app → submit to biller → biller generates bill → user pays instantly. First-of-its-kind integration — only PhonePe supports this flow.",
-    impact: [
-      { metric: "Time to Production", before: "N/A", after: "1 week (contract to live)" },
-      { metric: "Manual Labor", before: "Field agents visit every home", after: "Eliminated (user self-service)" },
-      { metric: "Industry Recognition", before: "N/A", after: "Demonstrated at GFF 2025 (Global Fintech Festival)" },
-      { metric: "Market Position", before: "No app supported this", after: "PhonePe-exclusive integration" },
-    ],
-    techStack: ["Java", "BBPS Protocol", "Camera Integration", "Biller API", "Production Deploy"],
-  },
-  {
-    title: "E2C Refund Status Visibility",
-    period: "Mar 2026 – Present",
-    tag: "In Progress",
-    problem:
-      "2–2.5 lakh daily UPI refunds from external merchant PSPs (GPay→PhonePe) have zero in-app visibility. Users must manually check bank statements to know if a refund succeeded or failed — causing support tickets and poor user experience.",
-    solution:
-      "Building end-to-end refund status tracking: integrating with NPCI refund callbacks, surfacing real-time refund state in PhonePe app, handling edge cases for failed/partial refunds across external PSP flows.",
-    impact: [
-      { metric: "Daily Refunds Affected", before: "2–2.5L (no visibility)", after: "Full in-app status tracking" },
-      { metric: "User Experience", before: "Check bank statement manually", after: "Real-time refund status in app" },
-      { metric: "Support Tickets", before: "High (refund queries)", after: "Expected significant reduction" },
-    ],
-    techStack: ["Java", "UPI Protocol", "NPCI Integration", "Event Pipeline"],
   },
 ];
 
