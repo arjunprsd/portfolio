@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Arjun Prasad",
-  title: "Senior Backend Engineer | Distributed Systems & Payments",
+  title: "Building distributed payment infrastructure at 20,000+ RPS",
   email: "arjunpd1998@gmail.com",
   phone: "+91 8860741978",
   linkedin: "https://www.linkedin.com/in/arjunprsd/",
