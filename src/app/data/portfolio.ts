@@ -3,7 +3,7 @@ export const personalInfo = {
   title: "Senior Backend Engineer | Distributed Systems & Payments",
   email: "arjunpd1998@gmail.com",
   phone: "+91 8860741978",
-  linkedin: "https://linkedin.com/in/arjun-prasad-b3576118b/",
+  linkedin: "https://www.linkedin.com/in/arjunprsd/",
   github: "https://github.com/arjunprsd",
   location: "Pune, India",
   yearsOfExp: 4.5,
