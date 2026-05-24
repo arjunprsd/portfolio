@@ -8,7 +8,7 @@ export const personalInfo = {
   location: "Pune, India",
   yearsOfExp: 4.5,
   summary:
-    "Backend engineer with 4.5 years building high-throughput bill payment systems at PhonePe — India's largest digital payments platform serving 500M+ users. I design, build, and own distributed microservices processing 4M+ transactions daily across India's national bill payment infrastructure (BBPS). Strong focus on reliability, scalability, and production ownership.",
+    "Backend engineer with 4.5+ years building high-throughput payment systems at PhonePe — India's largest digital payments platform serving 500M+ users. Currently on the UPI Core Transactional team handling 20,000+ RPS. Previously owned distributed microservices processing 4M+ transactions daily across BBPS infrastructure. Built greenfield services, reduced infra costs 45% with a custom async framework, and eliminated operational bottlenecks at scale.",
 };
 
 export const skills = {
@@ -41,33 +41,32 @@ export const timeline = [
     type: "fulltime",
   },
   {
-    period: "Feb 2022 – Jul 2023",
-    role: "Software Engineer (SDE-1)",
-    company: "PhonePe",
-    location: "Pune, India",
-    highlights: [
-      "Onboarded to BBPS domain — learned payment flows, NPCI protocols, and billpay architecture",
-      "Launched Hospitals & Recurring Deposits categories end-to-end",
-      "Built Enhancement 13 features, settlement cycle tracking, reconciliation tuning",
-      "Conducted first DR Drills, ITGC & SAR audits compliance",
-      "Wrote BBPS Deployment SOP and Category Onboarding SOP",
-    ],
-    type: "fulltime",
-  },
-  {
-    period: "Jul 2023 – Present",
-    role: "SDE-2 (Backend Engineer)",
-    company: "PhonePe",
+    period: "Feb 2022 – Feb 2026",
+    role: "Software Engineer → SDE-2 (Backend)",
+    company: "PhonePe — BBPS Pod",
     location: "Pune, India",
     highlights: [
       "Built UPMS microservice from scratch — 500+ RPS, 20% transaction growth",
       "Created Axon framework — async messaging abstraction achieving 45% infra cost reduction org-wide",
       "Overhauled status-check pipeline — 20,000+ pending/day → <100/day",
       "Migrated Paylink to modern framework — 15% transaction increase",
-      "Leading Loan API 1.1 — external NPCI communication and spec compliance",
+      "Led Loan API 1.1 — external NPCI communication and spec compliance",
       "Designed Checkin V3 and Error Bottomsheet standardization",
       "Active-Active DC migration planning, MemQ integration",
       "Mentoring 3 engineers, deputy to senior architect",
+    ],
+    type: "fulltime",
+  },
+  {
+    period: "Mar 2026 – Present",
+    role: "SDE-2 (Backend Engineer)",
+    company: "PhonePe — UPI Core Transactional Team",
+    location: "Pune, India",
+    highlights: [
+      "Handling 20,000+ RPS on India's highest-traffic payment rail (UPI)",
+      "Working on E2C refund flow — fixing failed refund status visibility for external PSP (GPay→PhonePe) improving user experience",
+      "Ramping up on NPCI contract architecture, UDIR (UPI Dispute Resolution) product & engineering design",
+      "Understanding core transactional flows, routing, and settlement infrastructure",
     ],
     type: "fulltime",
   },
