@@ -4,6 +4,7 @@ import { personalInfo, education, skills, timeline, projects, metrics, performan
 import { useState } from "react";
 
 function Nav() {
+  const [mobileOpen, setMobileOpen] = useState(false);
   const links = ["About", "Skills", "Timeline", "Projects", "Analytics", "Performance", "Contact"];
   return (
     <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-[#0f172a]/80 border-b border-[#334155]">
@@ -16,7 +17,19 @@ function Nav() {
             </a>
           ))}
         </div>
+        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-[#94a3b8] text-xl">
+          {mobileOpen ? "✕" : "☰"}
+        </button>
       </div>
+      {mobileOpen && (
+        <div className="md:hidden border-t border-[#334155] bg-[#0f172a] px-6 py-4 flex flex-col gap-3">
+          {links.map((l) => (
+            <a key={l} href={`#${l.toLowerCase()}`} onClick={() => setMobileOpen(false)} className="text-sm text-[#94a3b8] hover:text-[#38bdf8]">
+              {l}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 }
@@ -141,7 +154,7 @@ function Timeline() {
 }
 
 function Projects() {
-  const [expanded, setExpanded] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState<number | null>(0);
 
   return (
     <section id="projects" className="py-16 px-6 max-w-6xl mx-auto">
@@ -360,8 +373,8 @@ function Contact() {
       <div className="bg-[#1e293b] border border-[#334155] rounded-lg p-8 text-center">
         <h2 className="text-2xl font-bold mb-3">Let&apos;s Connect</h2>
         <p className="text-[#94a3b8] mb-6 max-w-lg mx-auto">
-          I&apos;m looking for opportunities to design and build systems at scale in product-focused environments.
-          Interested in distributed systems, high-throughput backends, and Staff/Principal engineer trajectory.
+          Open to backend and distributed systems roles at product-focused companies.
+          Passionate about building reliable, high-throughput systems that serve millions of users.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a href={`mailto:${personalInfo.email}`} className="px-5 py-2.5 bg-[#38bdf8] text-[#0f172a] font-medium rounded-lg hover:bg-[#7dd3fc] transition-colors text-sm">
