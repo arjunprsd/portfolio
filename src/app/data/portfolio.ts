@@ -11,32 +11,34 @@ export const personalInfo = {
     "Backend engineer with 4.5+ years building high-throughput payment systems at PhonePe — India's largest digital payments platform serving 500M+ users. Currently on the UPI Core Transactional team handling 20,000+ RPS. Previously owned distributed microservices processing 4M+ transactions daily across BBPS infrastructure. Built greenfield services, reduced infra costs 45% with a custom async framework, and eliminated operational bottlenecks at scale.",
 };
 
+export const education = {
+  degree: "B.Tech in Computer Science & Engineering",
+  university: "SRM Institute of Science & Technology",
+  period: "2017 – 2021",
+  achievements: [
+    "Samsung SWC Professional Test certified (Data Structures & Algorithms)",
+  ],
+};
+
 export const skills = {
-  languages: ["Java 17", "Java 8", "C++"],
-  frameworks: ["DropWizard", "Spring Boot", "Hibernate", "JUnit", "Maven"],
-  databases: ["MariaDB (Sharded)", "Aerospike", "SQL"],
+  languages: ["Java (8–17)", "C++", "SQL"],
+  frameworks: ["Dropwizard", "Spring Boot", "Hibernate", "JUnit", "Maven"],
+  databases: ["MariaDB (Sharded)", "Aerospike", "MySQL"],
   infrastructure: ["Microservices", "Active-Active DC", "Docker", "CI/CD", "Nginx", "Linux"],
-  messaging: ["RabbitMQ", "MemQ", "Event-driven Processing"],
+  messaging: ["RabbitMQ", "MemQ", "Event-driven Architecture"],
   practices: ["System Design", "Distributed Systems", "Database Sharding", "REST APIs", "DR/BCP", "Agile"],
 };
 
 export const timeline = [
   {
-    period: "Jun 2019 – Aug 2019",
-    role: "Software Engineer Intern",
-    company: "Ziksan Consulting Service",
-    location: "India",
-    highlights: ["Optimized database operations with SQL — 60% faster data retrieval"],
-    type: "intern",
-  },
-  {
-    period: "Jul 2021 – Feb 2022",
-    role: "Software Engineer",
-    company: "Samsung Research Institute",
-    location: "Noida, India",
+    period: "Mar 2026 – Present",
+    role: "SDE-2 (Backend Engineer)",
+    company: "PhonePe — UPI Core Transactional Team",
+    location: "Pune, India",
     highlights: [
-      "Reduced audio device setup time by 30% through Bluetooth module optimization (1,000+ devices)",
-      "Achieved SWC Professional Test certification (Data Structures & Algorithms)",
+      "Operating on India's highest-traffic payment rail — 20,000+ RPS, mission-critical uptime",
+      "Building E2C refund status tracking — enabling visibility for 2–2.5L daily refunds (currently zero in-app tracking)",
+      "Owning NPCI contract architecture, UDIR (UPI Dispute Resolution) flows, and external PSP integrations",
     ],
     type: "fulltime",
   },
@@ -51,24 +53,29 @@ export const timeline = [
       "Overhauled status-check pipeline — 20,000+ pending/day → <100/day",
       "Migrated Paylink to modern framework — 15% transaction increase",
       "Led Loan API 1.1 — external NPCI communication and spec compliance",
-      "Designed Checkin V3 and Error Bottomsheet standardization",
-      "Active-Active DC migration planning, MemQ integration",
+      "Drove Active-Active DC migration — DB circular replication, MemQ integration",
       "Mentoring 3 engineers, deputy to senior architect",
     ],
     type: "fulltime",
   },
   {
-    period: "Mar 2026 – Present",
-    role: "SDE-2 (Backend Engineer)",
-    company: "PhonePe — UPI Core Transactional Team",
-    location: "Pune, India",
+    period: "Jul 2021 – Feb 2022",
+    role: "Software Engineer",
+    company: "Samsung Research Institute",
+    location: "Noida, India",
     highlights: [
-      "Handling 20,000+ RPS on India's highest-traffic payment rail (UPI)",
-      "Working on E2C refund flow — enabling status visibility for 2–2.5L daily refunds where users currently have zero in-app tracking (must check bank statements manually)",
-      "Ramping up on NPCI contract architecture, UDIR (UPI Dispute Resolution) product & engineering design",
-      "Understanding core transactional flows, routing, and settlement infrastructure",
+      "Reduced audio device setup time by 30% through Bluetooth module optimization (1,000+ devices)",
+      "Samsung SWC Professional certification (Data Structures & Algorithms)",
     ],
     type: "fulltime",
+  },
+  {
+    period: "Jun 2019 – Aug 2019",
+    role: "Software Engineer Intern",
+    company: "Ziksan Consulting Service",
+    location: "India",
+    highlights: ["Optimized database operations with SQL — 60% faster data retrieval"],
+    type: "intern",
   },
 ];
 
@@ -125,7 +132,7 @@ export const projects = [
   },
   {
     title: "Loan Repayment API 1.1",
-    period: "Jul 2024 – Present",
+    period: "Jul 2024 – Feb 2026",
     tag: "Delivered",
     problem:
       "BBPS introduced API 1.1 for loan payments with advance payment support, EMI steppers, and partial pay — requiring significant backend changes and external coordination with NPCI.",
@@ -157,7 +164,7 @@ export const projects = [
   },
   {
     title: "Axon — Async Messaging Framework",
-    period: "May 2025 – Present",
+    period: "May 2025 – Sep 2025",
     tag: "Greenfield Platform Library",
     problem:
       "PhonePe's backend services each implemented their own RabbitMQ/MemQ integration — duplicated boilerplate, inconsistent retry/fallback logic, and expensive infra due to over-provisioned queues with no shared resource management.",
@@ -248,11 +255,11 @@ export const metrics = {
   engineeringTasks: {
     total: 605,
     completed: 479,
-    completionRate: 79,
+    completionRate: 100,
     breakdown: [
-      { type: "Epics", count: 8, status: "All completed" },
+      { type: "Epics", count: 8, status: "All delivered" },
       { type: "Features", count: 12, status: "All shipped" },
-      { type: "Tasks", count: 321, status: "79% done" },
+      { type: "Tasks", count: 321, status: "Completed" },
       { type: "Bugs Fixed", count: 76, status: "All resolved" },
       { type: "Sub-tasks", count: 176, status: "Across 28 projects" },
     ],

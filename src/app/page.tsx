@@ -1,10 +1,10 @@
 "use client";
 
-import { personalInfo, skills, timeline, projects, metrics, performanceRatings, leadership } from "./data/portfolio";
+import { personalInfo, education, skills, timeline, projects, metrics, performanceRatings, leadership } from "./data/portfolio";
 import { useState } from "react";
 
 function Nav() {
-  const links = ["About", "Timeline", "Projects", "Analytics", "Performance", "Contact"];
+  const links = ["About", "Skills", "Timeline", "Projects", "Analytics", "Performance", "Contact"];
   return (
     <nav className="fixed top-0 w-full z-50 backdrop-blur-md bg-[#0f172a]/80 border-b border-[#334155]">
       <div className="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
@@ -32,10 +32,10 @@ function Hero() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
+            { label: "Current RPS", value: "20K+" },
             { label: "Transactions/Day", value: "4M+" },
-            { label: "Service RPS", value: "500+" },
-            { label: "Merge Requests", value: "345" },
-            { label: "Years of Exp", value: "4.5" },
+            { label: "Merge Requests", value: "345+" },
+            { label: "Years of Exp", value: "4.5+" },
           ].map((s) => (
             <div key={s.label} className="bg-[#1e293b] border border-[#334155] rounded-lg p-4 text-center card-hover">
               <div className="text-2xl font-bold text-[#38bdf8]">{s.value}</div>
@@ -44,7 +44,7 @@ function Hero() {
           ))}
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 flex-wrap">
           <a href={personalInfo.linkedin} target="_blank" className="px-5 py-2.5 bg-[#38bdf8] text-[#0f172a] font-medium rounded-lg hover:bg-[#7dd3fc] transition-colors text-sm">
             LinkedIn
           </a>
@@ -62,7 +62,7 @@ function Hero() {
 
 function Skills() {
   return (
-    <section className="py-12 px-6 max-w-6xl mx-auto">
+    <section id="skills" className="py-12 px-6 max-w-6xl mx-auto">
       <h2 className="text-2xl font-bold mb-6">Technical Stack</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {Object.entries(skills).map(([category, items]) => (
@@ -77,6 +77,25 @@ function Skills() {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Education */}
+      <div className="mt-8 bg-[#1e293b] border border-[#334155] rounded-lg p-5">
+        <h3 className="text-sm font-semibold text-[#38bdf8] uppercase tracking-wide mb-3">Education</h3>
+        <div className="flex flex-wrap justify-between items-start">
+          <div>
+            <p className="font-medium">{education.degree}</p>
+            <p className="text-sm text-[#94a3b8]">{education.university}</p>
+          </div>
+          <span className="text-xs text-[#94a3b8] bg-[#0f172a] border border-[#334155] px-3 py-1 rounded-full">{education.period}</span>
+        </div>
+        {education.achievements.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-2">
+            {education.achievements.map((a) => (
+              <span key={a} className="text-xs text-[#4ade80] bg-[#4ade80]/10 border border-[#4ade80]/20 px-2.5 py-1 rounded-full">{a}</span>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
@@ -264,7 +283,7 @@ function Analytics() {
 
       {/* Task Breakdown */}
       <div className="bg-[#1e293b] border border-[#334155] rounded-lg p-6">
-        <h3 className="font-semibold mb-4">Engineering Task Delivery ({metrics.engineeringTasks.completionRate}% completion rate)</h3>
+        <h3 className="font-semibold mb-4">Engineering Task Delivery</h3>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           {metrics.engineeringTasks.breakdown.map((item) => (
             <div key={item.type} className="bg-[#0f172a] rounded-lg p-3 border border-[#334155] text-center">
