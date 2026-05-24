@@ -126,7 +126,7 @@ export const projects = [
   {
     title: "Loan Repayment API 1.1",
     period: "Jul 2024 – Present",
-    tag: "Active Project",
+    tag: "Delivered",
     problem:
       "BBPS introduced API 1.1 for loan payments with advance payment support, EMI steppers, and partial pay — requiring significant backend changes and external coordination with NPCI.",
     solution:
@@ -186,6 +186,21 @@ export const projects = [
       { metric: "Categories Launched by Ops (no eng)", before: "0", after: "2 (Rentals, NPS)" },
     ],
     techStack: ["Java", "BBPS Protocol", "Catalogue Service", "Process Design"],
+  },
+  {
+    title: "E2C Refund Status Visibility",
+    period: "Mar 2026 – Present",
+    tag: "In Progress",
+    problem:
+      "2–2.5 lakh daily UPI refunds from external merchant PSPs (GPay→PhonePe) have zero in-app visibility. Users must manually check bank statements to know if a refund succeeded or failed — causing support tickets and poor user experience.",
+    solution:
+      "Building end-to-end refund status tracking: integrating with NPCI refund callbacks, surfacing real-time refund state in PhonePe app, handling edge cases for failed/partial refunds across external PSP flows.",
+    impact: [
+      { metric: "Daily Refunds Affected", before: "2–2.5L (no visibility)", after: "Full in-app status tracking" },
+      { metric: "User Experience", before: "Check bank statement manually", after: "Real-time refund status in app" },
+      { metric: "Support Tickets", before: "High (refund queries)", after: "Expected significant reduction" },
+    ],
+    techStack: ["Java", "UPI Protocol", "NPCI Integration", "Event Pipeline"],
   },
 ];
 
