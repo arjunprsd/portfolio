@@ -64,7 +64,7 @@ export const timeline = [
     location: "Pune, India",
     highlights: [
       "Handling 20,000+ RPS on India's highest-traffic payment rail (UPI)",
-      "Working on E2C refund flow — fixing failed refund status visibility for external PSP (GPay→PhonePe) improving user experience",
+      "Working on E2C refund flow — enabling status visibility for 2–2.5L daily refunds where users currently have zero in-app tracking (must check bank statements manually)",
       "Ramping up on NPCI contract architecture, UDIR (UPI Dispute Resolution) product & engineering design",
       "Understanding core transactional flows, routing, and settlement infrastructure",
     ],
