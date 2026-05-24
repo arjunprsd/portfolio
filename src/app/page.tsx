@@ -58,7 +58,7 @@ function Hero() {
         </div>
 
         <div className="flex gap-4 flex-wrap">
-          <a href="/portfolio/Arjun_Prasad_Resume.pdf" download className="px-5 py-2.5 bg-[#38bdf8] text-[#0f172a] font-medium rounded-lg hover:bg-[#7dd3fc] transition-colors text-sm">
+          <a href="/portfolio/Arjun_Prasad_Resume.pdf" download className="px-6 py-3 bg-[#38bdf8] text-[#0f172a] font-bold rounded-lg hover:bg-[#7dd3fc] transition-colors text-base shadow-lg shadow-[#38bdf8]/20 animate-pulse hover:animate-none">
             Download Resume
           </a>
           <a href={personalInfo.linkedin} target="_blank" className="px-5 py-2.5 border border-[#334155] text-[#e2e8f0] rounded-lg hover:border-[#38bdf8] transition-colors text-sm">
@@ -157,7 +157,7 @@ function Timeline() {
 }
 
 function Projects() {
-  const [expanded, setExpanded] = useState<number | null>(0);
+  const [expanded, setExpanded] = useState<Set<number>>(new Set([0, 1, 2]));
 
   return (
     <section id="projects" className="py-16 px-6 max-w-6xl mx-auto">
@@ -168,7 +168,11 @@ function Projects() {
         {projects.map((project, i) => (
           <div key={i} className="bg-[#1e293b] border border-[#334155] rounded-lg overflow-hidden card-hover">
             <button
-              onClick={() => setExpanded(expanded === i ? null : i)}
+              onClick={() => {
+                const next = new Set(expanded);
+                if (next.has(i)) next.delete(i); else next.add(i);
+                setExpanded(next);
+              }}
               className="w-full text-left p-5 flex justify-between items-start"
             >
               <div>
@@ -180,10 +184,10 @@ function Projects() {
                 </div>
                 <p className="text-sm text-[#94a3b8]">{project.period}</p>
               </div>
-              <span className="text-[#94a3b8] text-xl">{expanded === i ? "−" : "+"}</span>
+              <span className="text-[#94a3b8] text-xl">{expanded.has(i) ? "−" : "+"}</span>
             </button>
 
-            {expanded === i && (
+            {expanded.has(i) && (
               <div className="px-5 pb-5 border-t border-[#334155] pt-4">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
