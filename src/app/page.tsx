@@ -184,7 +184,7 @@ function Projects() {
                 </div>
                 <p className="text-xs md:text-sm text-[#94a3b8]">{project.period}</p>
               </div>
-              <span className="text-[#94a3b8] text-xl shrink-0 ml-2">{expanded.has(i) ? "−" : "+"}</span>
+              <span className={`text-[#94a3b8] text-xl shrink-0 ml-2 transition-transform duration-300 ${expanded.has(i) ? "rotate-180" : ""}`}>&#x25BE;</span>
             </button>
 
             {expanded.has(i) && (
