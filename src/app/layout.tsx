@@ -8,7 +8,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Arjun Prasad — Backend & Distributed Systems Engineer",
+  title: "Portfolio",
   description: "4.5 years building high-throughput payment systems at PhonePe. 500+ RPS microservices, 4M+ daily transactions, distributed backend ownership.",
   keywords: "backend engineer, distributed systems, java, microservices, system design, PhonePe, payments",
 };
