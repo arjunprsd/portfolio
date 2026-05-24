@@ -406,7 +406,7 @@ function Contact() {
 function Footer() {
   return (
     <footer className="border-t border-[#334155] py-6 px-6 text-center text-xs text-[#64748b]">
-      <p>Built by Arjun Prasad • Backed by real engineering data (345 MRs, 605 tasks, 4 performance cycles)</p>
+      <p>Designed & engineered by Arjun Prasad • No mock data — just 4.5 years of shipping at scale</p>
     </footer>
   );
 }
