@@ -54,6 +54,8 @@ export const timeline = [
       "Migrated Paylink to modern framework — 15% transaction increase",
       "Led Loan API 1.1 — external NPCI communication and spec compliance",
       "Drove Active-Active DC migration — DB circular replication, MemQ integration",
+      "Built Piped Gas Meter Reading in 1 week (contract to production) — demonstrated at GFF 2025",
+      "Launched 6 bill payment categories; created SOP that eliminated engineering dependency",
       "Mentoring 3 engineers, deputy to senior architect",
     ],
     type: "fulltime",
