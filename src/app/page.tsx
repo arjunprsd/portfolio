@@ -58,7 +58,10 @@ function Hero() {
         </div>
 
         <div className="flex gap-4 flex-wrap">
-          <a href={personalInfo.linkedin} target="_blank" className="px-5 py-2.5 bg-[#38bdf8] text-[#0f172a] font-medium rounded-lg hover:bg-[#7dd3fc] transition-colors text-sm">
+          <a href="/portfolio/Arjun_Prasad_Resume.pdf" download className="px-5 py-2.5 bg-[#38bdf8] text-[#0f172a] font-medium rounded-lg hover:bg-[#7dd3fc] transition-colors text-sm">
+            Download Resume
+          </a>
+          <a href={personalInfo.linkedin} target="_blank" className="px-5 py-2.5 border border-[#334155] text-[#e2e8f0] rounded-lg hover:border-[#38bdf8] transition-colors text-sm">
             LinkedIn
           </a>
           <a href={personalInfo.github} target="_blank" className="px-5 py-2.5 border border-[#334155] text-[#e2e8f0] rounded-lg hover:border-[#38bdf8] transition-colors text-sm">
@@ -373,8 +376,8 @@ function Contact() {
       <div className="bg-[#1e293b] border border-[#334155] rounded-lg p-8 text-center">
         <h2 className="text-2xl font-bold mb-3">Let&apos;s Connect</h2>
         <p className="text-[#94a3b8] mb-6 max-w-lg mx-auto">
-          Open to backend and distributed systems roles at product-focused companies.
-          Passionate about building reliable, high-throughput systems that serve millions of users.
+          Looking for <span className="text-[#e2e8f0] font-medium">Senior Backend Engineer</span> roles at product-focused companies.
+          Passionate about distributed systems, high-throughput infrastructure, and building reliable payment platforms at scale.
         </p>
         <div className="flex flex-wrap justify-center gap-4">
           <a href={`mailto:${personalInfo.email}`} className="px-5 py-2.5 bg-[#38bdf8] text-[#0f172a] font-medium rounded-lg hover:bg-[#7dd3fc] transition-colors text-sm">
