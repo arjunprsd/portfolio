@@ -298,10 +298,10 @@ export const performanceRatings = [
 ];
 
 export const leadership = [
-  { activity: "Mentoring", detail: "Mentoring 3 junior engineers — code reviews, architecture guidance, ownership delegation" },
-  { activity: "Code Reviews", detail: "117 MRs reviewed — ensuring quality, design consistency, and knowledge sharing" },
-  { activity: "Technical Leadership", detail: "Driving design decisions, production triage, and unblocking across the pod" },
-  { activity: "External Representation", detail: "Independently representing PhonePe in BBPS/NPCI meetings — spec discussions, issue escalation" },
-  { activity: "Hiring", detail: "Created problem statements for campus hiring; shadowing interview panels" },
-  { activity: "Documentation", detail: "356 pages authored — SOPs, system designs, flow diagrams, onboarding guides" },
+  { activity: "Mentoring", icon: "👥", metric: "3 Engineers", detail: "Code reviews, architecture guidance, ownership delegation to junior engineers" },
+  { activity: "Code Reviews", icon: "🔍", metric: "117 MRs", detail: "Ensuring quality, design consistency, and knowledge sharing across the pod" },
+  { activity: "Technical Leadership", icon: "🧭", metric: "Pod-wide", detail: "Driving design decisions, production triage, and unblocking across teams" },
+  { activity: "External Representation", icon: "🤝", metric: "NPCI/BBPS", detail: "Independently representing PhonePe in spec discussions and issue escalation" },
+  { activity: "Hiring", icon: "🎯", metric: "Campus Hiring", detail: "Created problem statements for hiring; shadowing interview panels" },
+  { activity: "Documentation", icon: "📄", metric: "356 Pages", detail: "SOPs, system designs, flow diagrams, and onboarding guides authored" },
 ];

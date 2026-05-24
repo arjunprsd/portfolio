@@ -357,15 +357,18 @@ function Performance() {
 
       {/* Leadership */}
       <div className="bg-[#1e293b] border border-[#334155] rounded-lg p-6">
-        <h3 className="font-semibold mb-4">Leadership & Impact</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <h3 className="font-semibold mb-6 text-lg">Leadership & Impact</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {leadership.map((item) => (
-            <div key={item.activity} className="flex items-start gap-3">
-              <span className="text-[#38bdf8] mt-0.5 font-bold">›</span>
-              <div>
-                <span className="text-sm font-medium">{item.activity}:</span>
-                <span className="text-sm text-[#cbd5e1] ml-1">{item.detail}</span>
+            <div key={item.activity} className="bg-[#0f172a] border border-[#334155] rounded-lg p-4 hover:border-[#38bdf8]/50 transition-colors">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xl">{item.icon}</span>
+                <span className="font-semibold text-sm text-[#e2e8f0]">{item.activity}</span>
               </div>
+              {item.metric && (
+                <div className="text-2xl font-bold text-[#38bdf8] mb-1">{item.metric}</div>
+              )}
+              <p className="text-xs text-[#94a3b8] leading-relaxed">{item.detail}</p>
             </div>
           ))}
         </div>
