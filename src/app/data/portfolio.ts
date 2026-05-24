@@ -188,6 +188,22 @@ export const projects = [
     techStack: ["Java", "BBPS Protocol", "Catalogue Service", "Process Design"],
   },
   {
+    title: "Piped Gas Meter Reading via Camera",
+    period: "2025 (1 week sprint)",
+    tag: "Hackathon-style Delivery",
+    problem:
+      "Piped gas billers relied on manual door-to-door meter reading — sending field agents to every customer's house to note readings before generating bills. Costly, slow, and error-prone.",
+    solution:
+      "Built end-to-end integration in 1 week (contract finalization to production): camera-based meter reading capture in PhonePe app → submit to biller → biller generates bill → user pays instantly. First-of-its-kind integration — only PhonePe supports this flow.",
+    impact: [
+      { metric: "Time to Production", before: "N/A", after: "1 week (contract to live)" },
+      { metric: "Manual Labor", before: "Field agents visit every home", after: "Eliminated (user self-service)" },
+      { metric: "Industry Recognition", before: "N/A", after: "Demonstrated at GFF 2025 (Global Fintech Festival)" },
+      { metric: "Market Position", before: "No app supported this", after: "PhonePe-exclusive integration" },
+    ],
+    techStack: ["Java", "BBPS Protocol", "Camera Integration", "Biller API", "Production Deploy"],
+  },
+  {
     title: "E2C Refund Status Visibility",
     period: "Mar 2026 – Present",
     tag: "In Progress",
