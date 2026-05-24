@@ -56,7 +56,7 @@ export const timeline = [
       "Drove Active-Active DC migration — DB circular replication, MemQ integration",
       "Built Piped Gas Meter Reading in 1 week (contract to production) — demonstrated at GFF 2025",
       "Launched 6 bill payment categories; created SOP that eliminated engineering dependency",
-      "Mentoring 3 engineers, deputy to senior architect",
+      "Mentoring 3 engineers, driving design decisions, production triage, and unblocking across the pod",
     ],
     type: "fulltime",
   },
@@ -308,7 +308,7 @@ export const performanceRatings = [
 export const leadership = [
   { activity: "Mentoring", detail: "Mentoring 3 junior engineers — code reviews, architecture guidance, ownership delegation" },
   { activity: "Code Reviews", detail: "117 MRs reviewed — ensuring quality, design consistency, and knowledge sharing" },
-  { activity: "Deputy Architect", detail: "Acting as deputy for senior architect — design decisions, production triage, unblocking" },
+  { activity: "Technical Leadership", detail: "Driving design decisions, production triage, and unblocking across the pod" },
   { activity: "External Representation", detail: "Independently representing PhonePe in BBPS/NPCI meetings — spec discussions, issue escalation" },
   { activity: "Hiring", detail: "Created problem statements for campus hiring; shadowing interview panels" },
   { activity: "Documentation", detail: "356 pages authored — SOPs, system designs, flow diagrams, onboarding guides" },
