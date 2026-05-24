@@ -139,6 +139,23 @@ export const projects = [
     techStack: ["Java 17", "BBPS API 1.1", "XSD", "MariaDB"],
   },
   {
+    title: "BBPS Active-Active Data Center Migration",
+    period: "Sep 2025 – Feb 2026",
+    tag: "Infrastructure Reliability",
+    problem:
+      "BBPS services ran in a single active data center with passive DR — any DC failure meant full downtime for bill payments affecting millions of users. RabbitMQ couldn't work cross-DC, and all async processing was tightly coupled to a single DC.",
+    solution:
+      "Led the Active-Active migration: replaced RabbitMQ with MemQ (PhonePe's DC-aware queue) across all BBPS async workers, built the Axon framework to abstract queue switching, validated cross-DC routing, wrote architecture docs for prerequisites and migration plan, and conducted DR drills to certify readiness.",
+    impact: [
+      { metric: "DC Architecture", before: "Active-Passive (single DC)", after: "Active-Active (multi-DC)" },
+      { metric: "Availability", before: "DC failure = full downtime", after: "Zero-downtime DC failover" },
+      { metric: "Queue System", before: "RabbitMQ (single-DC only)", after: "MemQ (DC-aware, partitioned)" },
+      { metric: "DR Readiness", before: "Manual failover (hours)", after: "Automatic traffic routing" },
+      { metric: "Blast Radius", before: "100% (all users affected)", after: "~50% (single DC scoped)" },
+    ],
+    techStack: ["Java 17", "MemQ", "RabbitMQ", "Axon Framework", "Active-Active DC", "DR Drills"],
+  },
+  {
     title: "Axon — Async Messaging Framework",
     period: "May 2025 – Present",
     tag: "Greenfield Platform Library",
