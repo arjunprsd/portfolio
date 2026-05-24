@@ -32,9 +32,9 @@ function Hero() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
           {[
-            { label: "Current RPS", value: "20K+" },
-            { label: "Transactions/Day", value: "4M+" },
-            { label: "Merge Requests", value: "345+" },
+            { label: "Current RPS (UPI)", value: "20K+" },
+            { label: "UPI Txns/Day", value: "500M+" },
+            { label: "Billpay Txns/Day", value: "4M+" },
             { label: "Years of Exp", value: "4.5+" },
           ].map((s) => (
             <div key={s.label} className="bg-[#1e293b] border border-[#334155] rounded-lg p-4 text-center card-hover">

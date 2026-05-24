@@ -8,7 +8,7 @@ export const personalInfo = {
   location: "Pune, India",
   yearsOfExp: 4.5,
   summary:
-    "Backend engineer with 4.5+ years building high-throughput payment systems at PhonePe — India's largest digital payments platform serving 500M+ users. Currently on the UPI Core Transactional team handling 20,000+ RPS. Previously owned distributed microservices processing 4M+ transactions daily across BBPS infrastructure. Built greenfield services, reduced infra costs 45% with a custom async framework, and eliminated operational bottlenecks at scale.",
+    "Backend engineer with 4.5+ years building high-throughput payment systems at PhonePe — India's largest digital payments platform serving 500M+ users. Currently on the UPI Core Transactional team handling 20,000+ RPS and 500M+ daily transactions. Previously owned distributed microservices processing 4M+ billpay transactions daily (500 RPS peak) across BBPS infrastructure. Built greenfield services, reduced infra costs 45% with a custom async framework, and eliminated operational bottlenecks at scale.",
 };
 
 export const education = {
@@ -36,7 +36,7 @@ export const timeline = [
     company: "PhonePe — UPI Core Transactional Team",
     location: "Pune, India",
     highlights: [
-      "Operating on India's highest-traffic payment rail — 20,000+ RPS, mission-critical uptime",
+      "Operating on India's highest-traffic payment rail — 20,000+ RPS peak, 500M+ transactions daily",
       "Building E2C refund status tracking — enabling visibility for 2–2.5L daily refunds (currently zero in-app tracking)",
       "Owning NPCI contract architecture, UDIR (UPI Dispute Resolution) flows, and external PSP integrations",
     ],
