@@ -4,7 +4,7 @@ export const personalInfo = {
   email: "arjunpd1998@gmail.com",
   phone: "+91 8860741978",
   linkedin: "https://linkedin.com/in/arjun-prasad-b3576118b/",
-  github: "https://github.com/mr-nastik",
+  github: "https://github.com/arjunprsd",
   location: "Pune, India",
   yearsOfExp: 4.5,
   summary:
