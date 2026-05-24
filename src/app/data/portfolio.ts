@@ -13,7 +13,7 @@ export const personalInfo = {
 
 export const education = {
   degree: "B.Tech in Computer Science & Engineering",
-  university: "SRM Institute of Science & Technology",
+  university: "National Institute of Technology, Delhi",
   period: "2017 – 2021",
   achievements: [
     "Samsung SWC Professional Test certified (Data Structures & Algorithms)",
