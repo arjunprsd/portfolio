@@ -61,6 +61,7 @@ export const timeline = [
     location: "Pune, India",
     highlights: [
       "Built UPMS microservice from scratch — 500+ RPS, 20% transaction growth",
+      "Created Axon framework — async messaging abstraction achieving 45% infra cost reduction org-wide",
       "Overhauled status-check pipeline — 20,000+ pending/day → <100/day",
       "Migrated Paylink to modern framework — 15% transaction increase",
       "Leading Loan API 1.1 — external NPCI communication and spec compliance",
@@ -139,6 +140,23 @@ export const projects = [
     techStack: ["Java 17", "BBPS API 1.1", "XSD", "MariaDB"],
   },
   {
+    title: "Axon — Async Messaging Framework",
+    period: "May 2025 – Present",
+    tag: "Greenfield Platform Library",
+    problem:
+      "PhonePe's backend services each implemented their own RabbitMQ/MemQ integration — duplicated boilerplate, inconsistent retry/fallback logic, and expensive infra due to over-provisioned queues with no shared resource management.",
+    solution:
+      "Designed and built Axon from scratch — a lightweight async messaging framework abstracting RMQ and MemQ with unified publish API, configurable routing strategies, MemQ→RMQ fallback, dynamic worker buckets, and shared connection pooling. Published as reusable Dropwizard bundle adopted across teams.",
+    impact: [
+      { metric: "Infra Cost", before: "Baseline", after: "45% reduction across PhonePe" },
+      { metric: "Integration Effort", before: "Days (per service)", after: "Minutes (bundle plug-in)" },
+      { metric: "Queue Management", before: "Manual per-service", after: "Config-driven with validation" },
+      { metric: "Fault Tolerance", before: "No fallback", after: "MemQ→RMQ automatic fallback" },
+      { metric: "Adoption", before: "0 services", after: "Multiple teams org-wide" },
+    ],
+    techStack: ["Java 17", "Dropwizard", "RabbitMQ", "MemQ", "Builder Pattern", "Lifecycle Management"],
+  },
+  {
     title: "Category Onboarding (6 Categories)",
     period: "2022 – 2024",
     tag: "Process Innovation",
@@ -173,7 +191,7 @@ export const metrics = {
       { repo: "nexus-modules", count: 23, role: "Contributor" },
       { repo: "bbps-upms", count: 18, role: "Creator & Owner" },
       { repo: "nexus-recon", count: 6, role: "Contributor" },
-      { repo: "axon", count: 5, role: "Contributor" },
+      { repo: "axon", count: 5, role: "Creator & Owner" },
       { repo: "upi-client", count: 5, role: "Contributor" },
       { repo: "catalogue-service", count: 5, role: "Contributor" },
       { repo: "bill-manager", count: 3, role: "Contributor" },
